@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="Be yourself Be beautiful.">
@@ -163,6 +163,184 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/25/%E7%9F%B3%E5%AD%902/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/webp.png">
+      <meta itemprop="name" content="Wholly-Y">
+      <meta itemprop="description" content="Be yourself Be beautiful.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小杨的小卖部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/25/%E7%9F%B3%E5%AD%902/" class="post-title-link" itemprop="url">石子合并问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-25 21:59:56 / 修改时间：22:13:06" itemprop="dateCreated datePublished" datetime="2022-04-25T21:59:56+08:00">2022-04-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="算法实现题-3-5-石子合并问题（区间DP）"><a href="#算法实现题-3-5-石子合并问题（区间DP）" class="headerlink" title="算法实现题 3-5 石子合并问题（区间DP）"></a><strong>算法实现题 3-5 石子合并问题</strong>（区间DP）</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/T138085">题目地址</a><br><strong>题目描述</strong>：<br>桌面上从左到右放着 n(1≤n≤200) 堆石子，其中第 iii 堆石子包含的石子数量为 ai 。<br>现在要将石子有序地合并成一堆。<br>规定每次只能取相邻的两堆石子合并成新的一堆，并将新的一堆的石子数，记为该次合并的花费。<br>那么，n−1 次合并后，石子将合并成一堆。<br>你需要寻找一种合并方案，使得花费总和最小。输出最小的花费总和。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/25/%E7%9F%B3%E5%AD%902/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/25/%E7%9F%B3%E5%AD%901/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/webp.png">
+      <meta itemprop="name" content="Wholly-Y">
+      <meta itemprop="description" content="Be yourself Be beautiful.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小杨的小卖部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/25/%E7%9F%B3%E5%AD%901/" class="post-title-link" itemprop="url">石子合并问题（circle）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-25 21:59:39 / 修改时间：22:12:38" itemprop="dateCreated datePublished" datetime="2022-04-25T21:59:39+08:00">2022-04-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="石子合并问题"><a href="#石子合并问题" class="headerlink" title="石子合并问题"></a>石子合并问题</h2><p><strong>算法描述：</strong><br>在一个圆形操场的四周摆放着 n 堆石子。现要将石子有次序地合并成一堆。规定每次只<br>能选相邻的 2 堆石子合并成新的一堆，并将新的一堆石子数记为该次合并的得分。试设计一个算法，计算出将 n 堆石子合并成一堆的最小得分和最大得分。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/25/%E7%9F%B3%E5%AD%901/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/15/%E5%B0%8F%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -177,7 +355,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/15/%E5%B0%8F%E8%AE%B0/" class="post-title-link" itemprop="url">开学日记</a>
+            <a href="/2022/03/15/%E5%B0%8F%E8%AE%B0/" class="post-title-link" itemprop="url">随笔</a>
         </h2>
 
         <div class="post-meta">
@@ -186,10 +364,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-03-15 19:30:24 / 修改时间：19:32:10" itemprop="dateCreated datePublished" datetime="2022-03-15T19:30:24+08:00">2022-03-15</time>
+              <time title="创建时间：2022-03-15 19:30:24" itemprop="dateCreated datePublished" datetime="2022-03-15T19:30:24+08:00">2022-03-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-05 23:04:37" itemprop="dateModified" datetime="2022-07-05T23:04:37+08:00">2022-07-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -206,7 +390,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>18</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -227,8 +411,19 @@
       
           <span id="more"></span>
 
-<p>生气了…</p>
-<p>非常生气，爱看不看，不看滚…</p>
+<p>立个flag~~~ 一天更一篇😘</p>
+<p>这里是一些我的随笔日记，记录一些我认为有价值的东西。</p>
+<p>2022/06/30</p>
+<p>​        今天看到了一个视频，大概内容就是一个爷爷因为无力负担养育三只小猫，选择将这三只小猫送给好心人去养。85岁的老人徒步来到集市上，在烈日下等了大半个月也没有碰见一个好心人将这三只可爱的小猫带回家。一名b站的up主(凌源彬彬)最终决定领养这三只小猫，从老人手中接过那在方便面箱子里的三只小猫。老人因为在地上坐的时间太长，站起来的时候都差点晕倒，看到小猫有新的归属后，迈着蹒跚的步伐心满意足的走了，没有留下联系方式。之后我也看完了后续也希望能让这位老爷爷知道，您托付的三只小猫正在健康的成长。</p>
+<p>​        说起惭愧，作为新一代的人群，那些老一辈身上所含有的优良品质好像已经在我们这代人的身上消失不见。我想起了我的爷爷，从来都舍不得给自己添置一件新衣服，掉在地上的饭菜用水冲一冲还可以接着吃，做的饭吃不完最后也不舍得扔掉，夏天不舍得开空调，吃西瓜剩下的瓜皮看不见红色。还有不在我身边的例子，有的为了能招揽一个客户能在寒冬腊月穿着军大衣在人家家门口等上一个月只是能为了见上一面，他们大多没有漂亮的学历，过着最务实质朴的生活，没有过度的开销，没有精致的妆容，却是那个时代最好的精神面貌。</p>
+<p>​       现在的社会也许是浮躁了，我想我就是这样一个处于浮躁中的人，总想做出一点实绩，但却从开头就放弃，太注重效益连最基本的踏实努力都忘了。从前辈那里得到了一些好的建议，相对于我们这辈，其实父母那辈人对于工作是更加谦卑更有敬畏心的。挣钱从来都是不容易的，社会和企业愿意给你一个机会，你应该感谢对方给你的这个机会，并且想办法把这件事情做到最好。如果总是这样的挑挑拣拣，谁还愿意跟你合作呢。谁有想要高薪，总想捡着轻松的活拿着高额的报酬。反过头来想我们总是想我要什么，却从来没想过我能回馈什么。如今大二马上要步入大三的我，马上也要迈进就业的大潮中，但我自己能对市场产生的价值简直微乎其微。今日有感写下这篇小记的我，希望你在未来也能够像老一辈人那样，永远对工作保持谦卑的心态， 你所拿到的薪酬与你所创造的价值能成正比。</p>
+<p>2022/07/05</p>
+<p>春夏/姜思达部分采访</p>
+<p>你讨厌这个世界的什么？</p>
+<p>许多， 我几乎讨厌这个世界的大部分，但一定有小部分的东西留住你。</p>
+<p>如果给你个选择，你可以选择还是人，你可以选择是动物，你也可以选择是物件， 你也可以选择宇宙万物中的任何一物，你会选择 成为什么？</p>
+<p>你刚刚问我的时候我有两个答案，第二个答案是那我就想去做类似于像风啊 云啊这样的东西 没有明确的实体，也没有人能掌握你，你也仿佛不需要为什么负责。那第一个答案是我还是要做人，因为我只做过人，我只能 不管我能不能做好人，但它是我唯一擅长的事情，我去做动物，那我从头到脚都是动物，我做动物这件事可能要比我做人要糟糕千百倍，我还是做人吧。</p>
+<p>我不因为悲观而放弃每件事情的努力空间</p>
 
       
     </div>
@@ -320,101 +515,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/03/13/BUU_AreUSerialz/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/13/BUU_phpweb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/webp.png">
-      <meta itemprop="name" content="Wholly-Y">
-      <meta itemprop="description" content="Be yourself Be beautiful.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小杨的小卖部">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/13/BUU_phpweb/" class="post-title-link" itemprop="url">buu[网鼎杯2020朱雀组]phpweb-wp</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-13 20:30:51" itemprop="dateCreated datePublished" datetime="2022-03-13T20:30:51+08:00">2022-03-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-15 19:46:53" itemprop="dateModified" datetime="2022-03-15T19:46:53+08:00">2022-03-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CTF-wp/" itemprop="url" rel="index"><span itemprop="name">CTF-wp</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>BUU-[网鼎杯 2020 朱雀组]phpweb-wp</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/13/BUU_phpweb/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -984,101 +1084,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/18/sql%E6%B3%A8%E5%85%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/webp.png">
-      <meta itemprop="name" content="Wholly-Y">
-      <meta itemprop="description" content="Be yourself Be beautiful.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小杨的小卖部">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/18/sql%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">SQL注入</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-18 20:40:46" itemprop="dateCreated datePublished" datetime="2022-01-18T20:40:46+08:00">2022-01-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-22 21:09:23" itemprop="dateModified" datetime="2022-01-22T21:09:23+08:00">2022-01-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Sql/" itemprop="url" rel="index"><span itemprop="name">Sql</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><h4 id="一、基础预备知识"><a href="#一、基础预备知识" class="headerlink" title="一、基础预备知识"></a>一、基础预备知识</h4><p><strong>1.information_schema数据库</strong><br>其中保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。在 information_schema 中，有数个只读表。它们实际上是视图，而不是基本表，因此，你将无法看到与之相关的任何文件。<br><strong>2.information_schema.schemata表</strong><br>提供了当前mysql实例中所有数据库的信息，其中需要用到的是 schema_name 这一列，存放的是各个数据库的名称</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/18/sql%E6%B3%A8%E5%85%A5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1150,7 +1155,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1204,14 +1209,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">12k</span>
+    <span title="站点总字数">13k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
