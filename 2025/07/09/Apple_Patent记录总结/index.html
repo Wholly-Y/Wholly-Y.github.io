@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon_.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon_.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="😼  主题：APPLE公司专利权利要求分析记录 分析日期：2025年6月28日 分析对象：用于访问被锁定设备中应用程序的设备、方法和图形用户界面 分析目的：理解各权利要求之间的结构关系、功能差异及演进路径并学习权利要求布局的思路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apple_Patent分析记录总结">
+<meta property="og:url" content="http://example.com/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="小杨的Blog">
+<meta property="og:description" content="😼  主题：APPLE公司专利权利要求分析记录 分析日期：2025年6月28日 分析对象：用于访问被锁定设备中应用程序的设备、方法和图形用户界面 分析目的：理解各权利要求之间的结构关系、功能差异及演进路径并学习权利要求布局的思路">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/Blog/source_posts/Apple_Patent记录总结/image-20250709163707096.png">
+<meta property="og:image" content="http://example.com/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/Blog/source_posts/Apple_Patent记录总结/image-20250709163802828.png">
+<meta property="article:published_time" content="2025-07-09T03:31:04.839Z">
+<meta property="article:modified_time" content="2025-07-09T08:38:13.656Z">
+<meta property="article:author" content="Wholly-Y">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/Blog/source_posts/Apple_Patent记录总结/image-20250709163707096.png">
+
+<link rel="canonical" href="http://example.com/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Apple_Patent分析记录总结 | 小杨的Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">小杨的Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">什么时候才能躺平...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/webp.png">
+      <meta itemprop="name" content="Wholly-Y">
+      <meta itemprop="description" content="Be yourself Be beautiful.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小杨的Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Apple_Patent分析记录总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-07-09 11:31:04 / 修改时间：16:38:13" itemprop="dateCreated datePublished" datetime="2025-07-09T11:31:04+08:00">2025-07-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Daily-study/" itemprop="url" rel="index"><span itemprop="name">Daily-study</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>😼</p>
+<p> <strong>主题：APPLE公司专利权利要求分析记录</strong><br> <strong>分析日期：2025年6月28日</strong><br> <strong>分析对象：用于访问被锁定设备中应用程序的设备、方法和图形用户界面</strong><br> <strong>分析目的：理解各权利要求之间的结构关系、功能差异及演进路径并学习权利要求布局的思路</strong></p>
+<span id="more"></span>
+
+<h4 id="一、专利概况"><a href="#一、专利概况" class="headerlink" title="一、专利概况"></a>一、专利概况</h4><p> <strong>专利类型</strong>：发明专利<br> <strong>技术领域</strong>：便携式多功能设备、人机交互、用户界面控制<br> <strong>核心发明人/申请人</strong>：Apple Inc.<br> <strong>技术背景</strong>：<br> 本组权利要求涉及一种便携式多功能设备（如智能手机、平板电脑），该设备具有：</p>
+<ul>
+<li>锁定的密码保护状态；</li>
+<li>通过触敏显示器显示锁定界面；</li>
+<li>在不解除密码锁定的前提下，允许用户部分或完全访问特定应用（主要为相机或“第一应用程序”）；</li>
+<li>通过检测用户在显示器上执行的手势来决定是否启动该应用的受限会话。</li>
+</ul>
+<p> <strong>主要内容</strong>：涉及一种便携式多功能设备在锁定状态下，允许用户通过特定手势直接访问相机或其他特定应用程序的技术方案，同时保证设备整体安全性。</p>
+<p><strong>技术方案流程</strong>：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">┌────────────────────────────┐</span><br><span class="line">│ 用户处于锁定屏幕界面           │</span><br><span class="line">└────────────┬───────────────┘</span><br><span class="line">             │</span><br><span class="line">             ▼</span><br><span class="line">  ┌───────────────────────────┐</span><br><span class="line">  │ 用户触摸了屏幕上的标记区域？   │</span><br><span class="line">  └────┬──────────────┬───────┘</span><br><span class="line">       │是                         否</span><br><span class="line">       ▼                           ▼</span><br><span class="line">┌──────────────────┐          ┌─────────────────────────┐</span><br><span class="line">│ 是相机访问标记？    │          │ 其他无效操作，忽略        │</span><br><span class="line">└────┬─────────────┘          └─────────────────────────┘</span><br><span class="line">     │是</span><br><span class="line">     ▼</span><br><span class="line">┌────────────────────────────┐</span><br><span class="line">│ 识别手势轨迹<span class="regexp">/持续时间/</span>方向等   │</span><br><span class="line">└────────────┬───────────────┘</span><br><span class="line">             ▼</span><br><span class="line"> ┌────────────────────────────┐</span><br><span class="line"> │ 是否属于第一类型手势？         │</span><br><span class="line"> └─────┬──────────────────────┘</span><br><span class="line">       │是                      否（即为第二类型）</span><br><span class="line">       ▼                          ▼</span><br><span class="line">┌─────────────────────┐   ┌────────────────────────────┐</span><br><span class="line">│ 显示相机界面预览（模糊）│   │ 停止锁屏显示，启动相机应用     │</span><br><span class="line">│ 或动画反馈            │   │    并启用“受限相机会话模式”   │</span><br><span class="line">└─────────────────────┘   └────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="二、各权利要求技术特征对比（方法类）"><a href="#二、各权利要求技术特征对比（方法类）" class="headerlink" title="二、各权利要求技术特征对比（方法类）"></a>二、各权利要求技术特征对比（方法类）</h4><p>👉一种方法权利要求</p>
+<p><img src="/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/Blog\source_posts\Apple_Patent记录总结\image-20250709163707096.png" alt="image-20250709163707096"></p>
+<p><img src="/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/Blog\source_posts\Apple_Patent记录总结\image-20250709163802828.png" alt="image-20250709163802828"></p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>核心</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A类：<strong>基础触发条件变化</strong>（位置不同）</td>
+<td>用来囊括不同手势路径识别逻辑，支持左滑、右滑、斜滑等。</td>
+</tr>
+<tr>
+<td>B类：<strong>交互深度变化</strong>（手势种类不同）</td>
+<td>支持手势区分行为：短滑 → 半屏相机；长滑 → 完全相机应用；</td>
+</tr>
+<tr>
+<td>C类：<strong>应用对象/功能泛化</strong>（不限于相机）</td>
+<td>第54条：将“相机”替换为任意“第一应用”，并支持多个“模式”；</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>权利要求编号</th>
+<th>分类</th>
+<th>关键变化维度</th>
+<th>特点/补充说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>第1条</strong></td>
+<td>A1</td>
+<td>手势<strong>开始于</strong>相机标记</td>
+<td>经典滑动唤醒相机操作；保护范围较基础</td>
+</tr>
+<tr>
+<td><strong>第11条</strong></td>
+<td>A2</td>
+<td>手势<strong>起止都在</strong>相机标记</td>
+<td>更严格触发条件，提高交互精度</td>
+</tr>
+<tr>
+<td><strong>第12条</strong></td>
+<td>A3</td>
+<td>手势<strong>结束于</strong>相机标记</td>
+<td>支持更灵活的手势轨迹</td>
+</tr>
+<tr>
+<td><strong>第13条</strong></td>
+<td>B1</td>
+<td>不同类型手势触发不同反应</td>
+<td>手势区分“半预览 vs 完全开启”两种交互</td>
+</tr>
+<tr>
+<td><strong>第54条</strong></td>
+<td>C1</td>
+<td>相机→第一应用程序；第一/第二模式</td>
+<td>开始泛化，扩大适用对象；功能分级</td>
+</tr>
+<tr>
+<td><strong>第69条</strong></td>
+<td>C2</td>
+<td>第一应用程序 + <strong>两个标记</strong> → 两种模式</td>
+<td>显著增强灵活性，显式多标记、多模式保护</td>
+</tr>
+</tbody></table>
+<blockquote>
+<h4 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h4><p>第一类型手势/第二类型手势</p>
+<p><strong>第一类型的手势：</strong></p>
+<ul>
+<li><strong>动作特征</strong>：轻微、短暂，或者是朝特定方向滑动但不到位。</li>
+<li><strong>效果</strong>：<strong>部分地显示相机界面，或“预览式”开启，展示相机界面但不能拍照、不能操作。</strong></li>
+<li><strong>目的</strong>：可能是误触，或者用户只是想预览。这种手势会让系统比较保守地响应。</li>
+<li><strong>结果</strong>：可能只是“显示部分界面”或不完全启动相机应用。</li>
+</ul>
+<p> <strong>第二类型的手势：</strong></p>
+<ul>
+<li><strong>动作特征</strong>：更完整的滑动，比如从相机访问标记往上完整滑动，或持续滑动到某一位置。</li>
+<li><strong>效果</strong>：<strong>完全进入相机应用的“受限会话模式”，即允许拍照但不允许查看相册或访问其它应用。</strong></li>
+<li><strong>目的</strong>：表示用户明确希望快速使用相机。</li>
+<li><strong>结果</strong>：系统会“停止显示锁定屏幕”，并直接打开相机界面。</li>
+</ul>
+</blockquote>
+<hr>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">【核心方法权利要求】</span><br><span class="line">└─&gt; 基本操作流程：</span><br><span class="line"><span class="code">    ├─ 设备处于锁定状态</span></span><br><span class="line"><span class="code">    ├─ 显示锁屏界面（含访问标记）</span></span><br><span class="line"><span class="code">    ├─ 侦测用户手势输入</span></span><br><span class="line"><span class="code">    ├─ 判断手势与标记关系</span></span><br><span class="line"><span class="code">    └─ 触发对应的应用访问或解锁行为</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">【维度扩展一：手势触发条件】</span><br><span class="line">├─ 起始位置变体</span><br><span class="line">│   ├─ 手势开始于访问标记</span><br><span class="line">│   ├─ 手势开始并结束于访问标记</span><br><span class="line">│   └─ 手势结束于访问标记</span><br><span class="line">├─ 手势类型变体</span><br><span class="line">│   ├─ 第一类型手势 → 模式A</span><br><span class="line">│   └─ 第二类型手势 → 模式B</span><br><span class="line">└─ 组合变体（位置 + 类型）</span><br><span class="line"><span class="code">    └─ 如：开始于访问标记 + 第一类型手势</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">【维度扩展二：界面标记设计】</span><br><span class="line">├─ 单一访问标记（如“相机标记”）</span><br><span class="line">├─ 多个访问标记（第一访问标记 / 第二访问标记）</span><br><span class="line">└─ 标记类型差异化（解锁标记 vs 应用标记）</span><br><span class="line"></span><br><span class="line">【维度扩展三：应用对象扩展】</span><br><span class="line">├─ 固定应用（如相机）</span><br><span class="line">└─ 通用“第一应用程序”</span><br><span class="line"><span class="code">    ├─ 手电筒、支付、健康数据等</span></span><br><span class="line"><span class="code">    └─ 区分“第一模式”、“第二模式”</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">【维度扩展四：应用会话模式】</span><br><span class="line">├─ 受限模式访问（无法访问其他应用）</span><br><span class="line">├─ 模式一（只读/拍照）</span><br><span class="line">└─ 模式二（带存储/编辑）</span><br><span class="line"></span><br><span class="line">【维度扩展五：反馈呈现】</span><br><span class="line">├─ 部分显示应用界面（滑动过程中的预览）</span><br><span class="line">└─ 全面显示应用界面（完成手势后）</span><br><span class="line"></span><br><span class="line">（组合策略）</span><br><span class="line">└─ 各维度可交叉组合成多个独立权利要求</span><br><span class="line"><span class="code">    ├─ 如：“结束于标记 + 第二手势 + 模式二 + 多标记”</span></span><br><span class="line"><span class="code">    └─ 实现差异化保护、防止规避</span></span><br><span class="line"><span class="code"></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>权利要求布局带来的专利价值提升</strong></p>
+<table>
+<thead>
+<tr>
+<th>价值维度</th>
+<th>表现形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>更难被规避</strong></td>
+<td>细节差异（起点/终点/标记数量/手势类型）都被考虑进去了</td>
+</tr>
+<tr>
+<td><strong>审查友好</strong></td>
+<td>多条独立权利要求降低“一锅端”的风险</td>
+</tr>
+<tr>
+<td><strong>许可灵活</strong></td>
+<td>可按需求对某些条款授权给厂商或运营商，不用全部开放</td>
+</tr>
+<tr>
+<td><strong>专利族扩展便利</strong></td>
+<td>类似的发明点可拆分为多个分案或继续申请，有利于长期布局</td>
+</tr>
+<tr>
+<td><strong>维权效率高</strong></td>
+<td>被控产品可以从多个维度分析匹配某条独立权利要求，起诉不依赖单点突破</td>
+</tr>
+</tbody></table>
+<hr>
+<blockquote>
+<p>💕（￣︶￣）↗　<strong>作者小记</strong>：</p>
+<p>一、关于权利要求布局策略的收获</p>
+<ol>
+<li><strong>从方案流程拓展到应用场景</strong></li>
+</ol>
+<ul>
+<li>专利不只围绕一个“操作步骤”写一个方法，而是从一个<u>典型使用场景</u>（如锁屏访问相机）出发，抽象出“用户动作 → 系统响应”的逻辑链。</li>
+<li>在此基础上，分别从<u>用户输入、界面要素、系统处理、安全控制、应用访问方式</u>等多维度进行技术点细化，并撰写成多条独立/从属方法权利要求。</li>
+</ul>
+<p>😶‍🌫️方法类权利要求不应只关注结果，而应关注<strong>触发条件 + 触发方式 + 系统状态控制</strong>等各个节点。</p>
+<hr>
+<ol start="2">
+<li><strong>关键“区分性技术特征”维度</strong></li>
+</ol>
+<ul>
+<li>利用“手势的起点、终点、类型”作为方法步骤中的区分维度。</li>
+<li>同一个交互动作稍作调整（如“开始于标记”变成“结束于标记”），就可以形成一个新技术方案，成为新的从属或独立权利要求。</li>
+</ul>
+<p>😶方法权利要求的“用户交互触发条件”设计，是撰写的切入口之一，可作为撰写主-副权利要求的主轴。</p>
+<hr>
+<ol start="3">
+<li><strong>先具体再抽象来扩展权利边界</strong></li>
+</ol>
+<ul>
+<li>起初用“相机标记”，后期替换为“第一访问标记”或“第一应用程序”。</li>
+<li>“先具体再抽象”的布局方法——既保证了可实施性，又方便后续权利要求扩展适配不同场景。</li>
+</ul>
+<p>😏主权利要求可以具体化以便授权，从属权利要求可以逐步抽象化以扩大适用范围。</p>
+<hr>
+<p>summary：从第一条权利要求和第六十九条的对比可以看出权要的撰写思路，通过微小交互逻辑差异（如手势位置）构造多个等效保护方案，并把用户交互过程当作“系统事件流”，逐步抽象后编排权利要求结构。</p>
+</blockquote>
+<h4 id="三、多层次专利结构"><a href="#三、多层次专利结构" class="headerlink" title="三、多层次专利结构"></a>三、多层次专利结构</h4><blockquote>
+<p>除了方法类权利要求之外的其他类权利要求</p>
+<blockquote>
+<p>装置型功能模块，抽象功能部件</p>
+<p>结构化功能描述：强调显示单元、处理单元等模块化连接</p>
+<p>GUI用户图形界面+存储介质+信息装置：外观 → 软件逻辑 → 硬件系统,一一对应。</p>
+</blockquote>
+</blockquote>
+<p>例如：存储介质类权利要求</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>权利要求号</th>
+<th>关键区别点</th>
+<th>技术细化方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>16</strong></td>
+<td>手势“开始于相机访问标记”，没有对结束点的要求</td>
+<td>比较宽泛，启动相机受限会话</td>
+</tr>
+<tr>
+<td><strong>21</strong></td>
+<td>手势“开始于并结束于相机访问标记”</td>
+<td>更精确地限制手势路径，避免误触</td>
+</tr>
+<tr>
+<td><strong>26</strong></td>
+<td>手势“结束于相机访问标记”</td>
+<td>开始点开放，仅要求结束于指定区域</td>
+</tr>
+<tr>
+<td><strong>31</strong></td>
+<td>区分“第一类型手势”和“第二类型手势”</td>
+<td>引入手势种类识别，部分/完全启动相机界面</td>
+</tr>
+<tr>
+<td><strong>85</strong></td>
+<td>相机可替换为“第一应用程序”，且区分“第一/第二模式”</td>
+<td>引入泛用性，不局限于相机，用于多种App受限访问</td>
+</tr>
+<tr>
+<td><strong>90</strong></td>
+<td>设置“两个不同的访问标记”，分别启动不同模式</td>
+<td>更精细化的UI设计，增强用户控制力</td>
+</tr>
+</tbody></table>
+<h4 id="四、TIPS"><a href="#四、TIPS" class="headerlink" title="四、TIPS"></a>四、TIPS</h4><blockquote>
+<p>技术问题的限定</p>
+<p>专利撰写实务中，技术问题表述不宜宽泛或抽象</p>
+<blockquote>
+<p>提出的技术特征，是否是“为了解决该技术问题”而设计的？</p>
+<p>权利要求中的技术特征并没有明确指向并解决特定的技术问题从而质疑其技术性</p>
+</blockquote>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Wholly-Y
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2025/07/09/Apple_Patent%E8%AE%B0%E5%BD%95%E6%80%BB%E7%BB%93/" title="Apple_Patent分析记录总结">http://example.com/2025/07/09/Apple_Patent记录总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/06/lc5/" rel="prev" title="26. 删除有序数组中的重复项">
+      <i class="fa fa-chevron-left"></i> 26. 删除有序数组中的重复项
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%93%E5%88%A9%E6%A6%82%E5%86%B5"><span class="nav-text">一、专利概况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%90%84%E6%9D%83%E5%88%A9%E8%A6%81%E6%B1%82%E6%8A%80%E6%9C%AF%E7%89%B9%E5%BE%81%E5%AF%B9%E6%AF%94%EF%BC%88%E6%96%B9%E6%B3%95%E7%B1%BB%EF%BC%89"><span class="nav-text">二、各权利要求技术特征对比（方法类）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%A4%9A%E5%B1%82%E6%AC%A1%E4%B8%93%E5%88%A9%E7%BB%93%E6%9E%84"><span class="nav-text">三、多层次专利结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81TIPS"><span class="nav-text">四、TIPS</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wholly-Y"
+      src="/images/webp.png">
+  <p class="site-author-name" itemprop="name">Wholly-Y</p>
+  <div class="site-description" itemprop="description">Be yourself Be beautiful.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Wholly-Y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Wholly-Y" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_54786552?spm=1001.2101.3001.5343" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_54786552?spm&#x3D;1001.2101.3001.5343" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wholly-Y</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">17k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">16 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":false},"log":false});</script></body>
+</html>
